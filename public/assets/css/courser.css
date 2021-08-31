@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+nav {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+
+}
+
+header .container>* {
+    width: 33.33%;
+}
+nav a {
+    width: 20%;
+}
+
+.logo {
+    text-align: center;
+}
+
+
+
+.button {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.button a {
+    border-radius: 50px;
+    background: #71e2a6;
+    padding: 14px 48px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+#courser_main_page {
+    background: url("../img/design_bg_wrapper_13.png")no-repeat;
+    background-size: 100%, cover;
+    height: 100vh;
+
+}
+.wrapper_courser .p {
+    padding-top: 180px;
+}
+.wrapper_courser span {
+    font-size: 25px;
+}
+
+#courser_main_page h1 {
+    padding-top: 200px;
+}
+#course {
+    background: url("../img/vchi_grayuchci_bg.png")no-repeat;
+    background-size: 100%, cover;
+    height: 100vh;
+}
+.aside {
+    width: 65%;
+    margin-bottom: 120px;
+}
+.sidebar {
+    width: 35%;
+    margin-top: 250px;
+    padding-left: 150px;
+    box-sizing: border-box;
+}
+.sidebar-button a {
+    padding: 10px 30px;
+}
+.sidebar-button {
+    padding-top: 50px;
+    padding-right: 80px;
+}
+h1, .wrapper_courser {
+    text-align: center;
+    font-weight: normal;
+    font-size: 60px;
+    width: 100%;
+    padding-top: 35px;
+}
+.wrapper_courser h1 {
+    line-height: 80px;
+}
+ol {
+    padding-left: 40px;
+}
+textarea {
+    width: 100%;
+}
+.title-edit {
+   font-size: 30px;
+}
+.subtitle-edit {
+    font-size: 20px;
+}
+.price-edit {
+    width: 50px;
+}
+@media only screen and (max-device-width: 480px) {
+    #courser_main_page {
+        margin-top: 15vh;
+    }
+
+    .aside {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    #courser_main_page {
+        height: auto;
+    }
+    .sidebar-button {
+        margin-bottom: 30px;
+
+    }
+    #courser_main_page h1{
+        padding-top: 100px;
+        line-height: 45px;
+        font-size: 35px;
+    }
+.wrapper_courser h2 {
+display: none;
+  }
+}

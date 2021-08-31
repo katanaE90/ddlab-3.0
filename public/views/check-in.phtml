@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/css/check_in.css">
+    <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Title</title>
+</head>
+<body>
+<header id="header_main_page">
+    <?php include_once PUB . "components/navigation.phtml" ?>
+    <div class="check_in" id="check_in">
+        <div class="container">
+            <h2>ЗАПИСАТИСЯ НА НАВЧАННЯ</h2>
+
+
+            <div class="form">
+                <p>Ваше ім'я та прізвище (обов'язково)</p>
+                <input v-model="mailData.name" type="text">
+                <br>
+            </div>
+            <div class="form">
+                <p>Ваш e-mail (обов'язково)</p>
+                <input v-model="mailData.email" type="email">
+            </div>
+            <div class="form">
+                <p>Ваш телефон (обов'язково)</p>
+                <input v-model="mailData.phone" type="text">
+            </div>
+            <div class="form">
+                <p>Вік дитини (обов'язково)</p>
+                <input v-model="mailData.age" type="number">
+            </div>
+            <div class="edit-button-container container">
+                <div class="check"><span>{{editResult}}</span>
+                    <i v-if="successFlag" class="fa fa-check" aria-hidden="true"></i>
+                    <i v-if="errorFlag" class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                </div>
+                <div class="button register" v-on:click="sendMail()">ВІДПРАВИТИ</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/check_in.js"></script>
+<script src="components/navigation.js"></script>
+</body>
+</html>

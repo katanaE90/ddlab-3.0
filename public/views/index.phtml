@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Курсы ddl: программирование, дизайн, создание игр. Обучение программированию.">
+    <meta name="keywords"
+          content="школа программирования для детей, программирование для детей, курсы программирования для детей, курсы программирования киев, курсы программирования для детей троещина, курсы для школьников, курсы для школьников киев, IT для детей, IT для детей киев, IT для детей троещина, школа программирования для детей киев, школа программирования для, детей троещина, язык программирования, дети программисты, как написать код ребенку, учимся программировать, scratch для детей, курсы, scratch для детей киев, python для детей киев, C++ для детей киев, C# для детей киев, курсы троещина, web программрование детям, программирование левый берег, курсы програмирования, IT для школьников, дизайн для школьников, вебдизайн для детей, курсы вебдизайна детям киев, курсы вебдизайна детям, графический дизайн детям, курсы графического дизайна детям, курсы графического дизайна детям киев, программирование для подростков, курси для підлітків, програмування для підлітків, для підлітків, ЗНО з математики, ЗНО з математики троєщина, ЗНО троєщина, програмування для початківців Київ, програмування для початківців">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+    <link rel="shortcut icon" type="image/jpg" href="../assets/img/fav16.png"/>
+    <title>Курси програмування</title></head>
+<body>
+<header id="header_main_page">
+    <?php include_once PUB . "components/navigation.phtml" ?>
+    <div class="wrapper"><span class="text">ГРАЙ, МАЛЮЙ, ПРОГРАМУЙ!</span><span class="pointer">|</span></div>
+</header>
+<section id="courses">
+    <div v-for="cat,i in cats" class="container" v-if="coursesFlag">
+        <h2>{{cat.title}}</h2>
+        <?php if ($this->token === $_GET['token']): ?>
+            <textarea v-model="cats[i].title" aria-label="subtitle"></textarea>
+        <?php endif ?>
+        <div class="block1" v-for="course,k in cat.courses"><h3>{{course.title}}</h3>
+            <h4>{{course.subtitle}}</h4>
+            <div class="price">
+                <div class="price2">{{course.price}}</div>
+                <div class="price1">грн</div>
+                <div class="price4">/</div>
+                <div class="price3">міс</div>
+            </div>
+            <p>Рекомендований вік: <span v-if="course.age_min != 0">від {{course.age_min}}
+                <span v-if="course.age_max != 0 && course.age_max < 100">до {{course.age_max}}</span>
+                    років</span><span v-if="course.age_min == 0 && course.age_max == 0">для учнів 10 та 11 класів</span>
+            </p>
+            <p>Термін: {{course.duration}} модулі {{course.duration*16}} - {{course.duration*16+2}} занять</p>
+            <p v-bind:class="[course.course_program !== '' ? 'p': '']">
+                <span v-if="course.course_program !== ''">Програми курсу: {{course.course_program}}</span>
+            </p>
+            <div class="button"><a v-bind:href="course.href">ДЕТАЛЬНІШЕ</a></div>
+        </div>
+        <div class="content">{{cat.description}}
+        </div>
+        <?php if ($this->token === $_GET['token']): ?>
+            <textarea v-model="cats[i].description" aria-label="subtitle" class="cat-description"></textarea>
+        <?php endif ?>
+    </div>
+    <?php if ($this->token === $_GET['token']): ?>
+        <div class="edit-button-container container">
+            <div class="check"><span>{{editResult}}</span>
+                <i v-if="successFlag" class="fa fa-check" aria-hidden="true"></i>
+                <i v-if="errorFlag" class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            </div>
+            <div class="button-edit" v-on:click="edit()">Зберегти</div>
+        </div>
+    <?php endif ?>
+</section>
+<section id="our_overrun">
+    <div class="container"><h2>НАШІ ПЕРЕВАГИ</h2>
+        <div class="scene">
+            <div class="cube">
+                <p class="face face-front">Унікальні методичні матеріали</p>
+                <ul class="face face-back">
+                    <li>власні авторські курси та програми;</li>
+                    <li>аптація під вікові особливості групи;</li>
+                    <li>база – особистий робочий досвід, матеріали джерел вітчизняних та зарубіжних видань.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scene">
+            <div class="cube">
+                <p class="face face-front">Сучасні молоді викладачі</p>
+                <ul class="face face-back">
+                    <li>мають практичний досвід роботи в IT-сфері;</li>
+                    <li>працюють з дітьми та підлітками більше 2 років;</li>
+                    <li>випускники провідних ЗВО (КПІ та КНУ ім. Тараса Шевченка).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scene">
+            <div class="cube">
+                <p class="face face-front">Зворотній зв'язок з учнями</p>
+                <ul class="face face-back">
+                    <li>викладачі онлайн: спілкуються з учнями в соціальних мережах;</li>
+                    <li>- в процесі навчання – спілкування через особисті поштові скриньки;</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scene">
+            <div class="cube">
+                <p class="face face-front">Простір для мислення</p>
+                <ul class="face face-back">
+                    <li>мета практичних завдань – засвоєння матеріалу цікавим та творчим способом;</li>
+                    <li>самовираження учнів, їх думок та побажань під час навчального процесу.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scene">
+            <div class="cube">
+                <p class="face face-front">Контроль за навчанням</p>
+                <ul class="face face-back">
+                    <li>домашні завдання як засіб поточного контролю успіхів;</li>
+                    <li>підсумкові практичні завдання та проекти в кінці кожного модуля.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scene">
+            <div class="cube">
+                <p class="face face-front">Постійне самовдосконалення</p>
+                <ul class="face face-back">
+                    <li>оновлення методичних матеріалів відповідно до змін у світі IT;</li>
+                    <li>тренінги із підвищення кваліфікації команди.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<?php include_once PUB . "components/contacts.phtml" ?>
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/index.js"></script>
+<script src="components/text-animate.js"></script>
+<script src="components/navigation.js"></script>
+<script src="components/contacts.js"></script>
+</body>
+</html>

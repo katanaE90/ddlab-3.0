@@ -1,0 +1,375 @@
+
+.block {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block1 {
+    width: 33.33%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.block1 .button {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+
+.price {
+    padding-bottom: 40px;
+    font-size: 20px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.price1 {
+    font-size: 15px;
+}
+
+.price2 {
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.price3 {
+    font-size: 15px;
+    padding-top: 7px;
+}
+.price4 {
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.block h1 {
+    font-size: 32px;
+}
+
+.block1 {
+    padding-top: 75px;
+    border-radius: 20px;
+    transition: 1s;
+    padding-bottom: 50px;
+}
+
+.block1:hover {
+    color: #000;
+    transition: 1s;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .1);
+
+}
+
+.block1 p {
+    border-top: solid 1px #ddd;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.p {
+    border-bottom: solid 1px #ddd;
+}
+
+.content {
+    width: 100%;
+
+}
+
+
+.map {
+    padding-top: 70px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+
+.block2:hover {
+    transform: rotateY(180deg);
+}
+
+.block2:hover p {
+    /*transform: rotateY(90deg) translateZ(400px);*/
+}
+
+/*3d rotation*/
+.scene {
+    width: 33.33%;
+    text-align: center;
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    perspective: 1263px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    transition: transform 1.5s;
+}
+
+.cube {
+    transform: translateZ(-100px) rotateY(0deg);
+}
+
+.scene:hover:nth-child(2n+1) .cube {
+    transform: translateZ(-100px) rotateY(-540deg);
+}
+
+.scene:hover:nth-child(3n+1) .cube {
+    transform: translateZ(-100px) rotateY(-180deg);
+}
+
+.scene:hover:nth-child(2n) .cube {
+    transform: translateZ(-100px) rotateX(-180deg) rotateZ(-180deg);
+}
+
+.scene .face-back {
+    opacity: 0;
+}
+
+.scene:hover .face-back {
+    opacity: 1;
+}
+
+.scene .face-front {
+    opacity: 1;
+}
+
+.scene:hover .face-front {
+    opacity: 0;
+}
+
+
+.face {
+    position: absolute;
+    transition: all 1s;
+}
+
+
+.face-front {
+    transform: rotateY(0deg) translateZ(100px);
+
+    font-size: 25px;
+    width: 51%;
+}
+
+.face-back {
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 14px;
+    width: 61%;
+
+}
+
+
+/*end 3d rotation*/
+
+.scene:nth-child(2) .cube {
+    background: url("../img/1icon.png") no-repeat center;
+}
+
+.scene:nth-child(3) .cube {
+    background: url("../img/1icon_1.png") no-repeat center;
+}
+
+.scene:nth-child(4) .cube {
+    background: url("../img/1icon_2.png") no-repeat center;
+}
+
+.scene:nth-child(5) .cube {
+    background: url("../img/1icon_3.png") no-repeat center;
+}
+
+.scene:nth-child(6) .cube {
+    background: url("../img/icon_4.png") no-repeat center;
+
+}
+
+.scene:last-child .cube {
+    background: url("../img/1icon_6.png") no-repeat center;
+
+}
+
+
+.cube li {
+    line-height: 22px;
+}
+
+.cube ul {
+    list-style-type: none;
+}
+
+.cube li:before {
+    content: "-";
+    position: relative;
+    left: -5px;
+}
+
+.cat-description {
+    height: 20vh;
+}
+
+@media only screen and (max-device-width: 480px) {
+
+    h2 {
+        padding-top: 2vh;
+    }
+
+    .menu nav {
+        display: flex;
+        flex-flow: column;
+        padding-left: 0;
+    }
+
+    .edit-button-container {
+        margin-right: 10px;
+    }
+
+    .button-edit {
+        padding: 11px 33px;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        width: 75%;
+        /*padding-top: 50px;*/
+        background-color: white;
+        z-index: 1;
+        height: 100vh;
+    }
+
+    #our_overrun .container h2 {
+        line-height: 100px;
+
+    }
+
+
+    .header .logo {
+        align-items: center;
+        display: block;
+    }
+
+    .header i {
+        font-size: 50px;
+        color: #4dc794;
+    }
+
+    .menu .logo img {
+        width: 70%;
+
+    }
+
+    .menu .logo a {
+        width: 100%;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .menu .logo {
+        padding-left: 20px;
+        border-bottom: 1px dotted #a1a1a1;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+
+    .block1 {
+        width: 100%;
+        padding-top: 1vh;
+    }
+
+    #main-menu {
+        display: none;
+    }
+
+    .wrapper {
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+
+    h2 {
+        font-size: 30px;
+    }
+
+    #contact .block3 span {
+        line-height: 403px;
+        font-size: 20px;
+    }
+
+    .scene {
+        height: 50vh;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .scene .cube {
+        background-size: 100% !important;
+    }
+
+    .scene .cube p, .scene .cube ul li {
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    .content {
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        padding-top: 90px;
+    }
+
+    .price1, .price3 {
+        font-size: 20px;
+    }
+
+    .price2 {
+        font-size: 40px;
+    }
+
+    .block1 h4, .block1 h3 {
+        padding: 1vh 0;
+    }
+
+    .price {
+        padding-top: 3vh;
+        padding-bottom: 6vh;
+    }
+
+    .block1 p {
+        padding: 3vh;
+    }
+
+    .block1 .button a {
+        padding: 16px 50px;
+    }
+
+    .block1 .button {
+        margin-top: 10vh;
+    }
+
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+
+}
+
+@media screen and (min-device-width: 769px) {
+    .menu, .header {
+        display: none;
+    }
+}

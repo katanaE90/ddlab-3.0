@@ -1,0 +1,69 @@
+.logo_admin {
+    text-align: center;
+    margin-top: 130px;
+    margin-bottom: 20px;
+}
+
+.admin-content {
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 40px;
+
+}
+
+form input {
+    height: 35px;
+    width: 263px;
+    border: 2px solid #ccd0d4;
+    border-radius: 3px;
+
+}
+
+.link i {
+    color: #007cba;
+    position: relative;
+    font-size: 18px;
+    top: -28px;
+    left: 114px;
+}
+
+.link {
+    width: 273px;
+    margin: 0 auto;
+}
+.link p {
+    text-align: left;
+    font-size: 14px;
+    line-height: 0.1;
+    padding-top: 20px;
+}
+.a a {
+    text-decoration: none;
+    color:#555d66;
+}
+.checkbox {
+    text-align: left;
+    padding-top: 5px;
+}
+
+.checkbox a {
+    text-decoration: none;
+    color: black;
+}
+
+.checkbox a:last-child {
+    border: solid #007cba;
+    border-radius: 5px;
+    padding: 4px 6px;
+    background-color: #007cba;
+    color: white;
+    margin-left: 72px;
+}
+@media only screen and (max-device-width: 480px) {
+    .logo_admin {
+        margin-top: 40px;
+    }
+}

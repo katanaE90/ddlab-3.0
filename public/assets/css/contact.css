@@ -1,0 +1,53 @@
+@media only screen and (max-device-width: 480px) {
+    #header_main_page {
+        background-size: auto 100%;
+        background-position-x: center;
+        display: flex;
+        align-items: center;
+        height: 85vh;
+        margin-top: 15vh;
+    }
+
+    .header {
+        height: 15vh;
+    }
+
+    #contact2 .block3 {
+        width: 100%;
+        margin-top: 56px;
+    }
+
+    #contact2 h2 {
+        font-size: 90px;
+        font-weight: normal;
+    }
+
+    #contact2 .block3 span {
+        line-height: 403px;
+        font-size: 50px;
+    }
+
+    #contact2 .block3 i {
+        font-size: 410px;
+    }
+
+    .wrapper {
+        font-size: 100px;
+        line-height: 150px;
+
+    }
+
+    #contact2 h1 {
+        font-size: 90px;
+        padding: 100px 0;
+    }
+}
+@media screen and (min-device-width: 769px) {
+    nav a:last-child {
+        border-top: solid #c39f76 3px;
+        position: relative;
+        top: -30px;
+        padding-top: 27px;
+    }
+
+}

@@ -1,0 +1,67 @@
+.check_in h2 {
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+
+}
+.check_in {
+    width: 100%;
+}
+.check_in .container {
+    width: 40%;
+    text-align: center;
+}
+.check_in input {
+    border: none;
+    padding: 14px;
+    margin: 10px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+}
+.form p {
+    font-size: 18px;
+text-align: left;
+}
+.check_in .button {
+    border-radius: 50px;
+    background: #71e2a6;
+    padding: 14px 48px;
+    color: white;
+    font-size: 15px;
+
+}
+.check_in .button:hover {
+    background-color: #19ac19;
+}
+.check_in .button {
+    text-align: left;
+    margin-top: 50px;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .check_in .container {
+        width: 80%;
+    }
+    .check_in input {
+        padding: 15px 45px;
+        width: 70%;
+    }
+    .form p {
+        font-size: 14px;
+    }
+    .check_in .button a {
+        padding: 15px 48px;
+        font-size: 11px;
+
+    }
+    .check_in h2 {
+        font-size: 30px;
+        margin-top: 70px;
+        line-height: 31px;
+    }
+
+}

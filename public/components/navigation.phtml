@@ -1,0 +1,51 @@
+<link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+<div class="container" id="main-menu">
+    <nav>
+        <!--        <a v-for="item in navigation" v-if="navigationFlag" v-href="item.href">{{item.title}}</a>-->
+        <a href="o-nas">ПРО НАС</a>
+        <a href="nasha-komanda">ДРІМ ТІМ</a>
+        <a href="pravila-ta-umovi">УМОВИ</a>
+        <a href="kontakty">КОНТАКТИ</a>
+    </nav>
+    <div class="logo">
+        <a href="/"><img src="../assets/img/logo_header_main_page.png" alt="bg"></a>
+    </div>
+    <div class="button register"><a href="registratsiya">РЕЄСТРАЦІЯ</a></div>
+</div>
+
+<div id="main-menu--mobile">
+    <transition name="slide">
+        <div class="menu" v-if="showMobileMenu">
+            <div class="logo">
+                <a href="/"><img src="../assets/img/logo_header_main_page.png" alt="bg"></a>
+            </div>
+            <nav>
+                <a href="o-nas">Про нас</a>
+                <a href="nasha-komanda">Дрім тім</a>
+                <a href="pravila-ta-umovi">Умови</a>
+                <a href="kontakty">Контакти</a>
+                <a href="registratsiya">Реєстрація</a>
+            </nav>
+        </div>
+    </transition>
+
+
+    <div class="header">
+        <div class="logo">
+            <a href="/"><img src="assets/img/logo_header_main_page.png" alt="bg"></a>
+        </div>
+        <div class="mobile-menu" v-on:click="showMenu()">
+            <div class="icon-menu"></div>
+            <div class="icon-menu"></div>
+            <div class="icon-menu"></div>
+        </div>
+    </div>
+    <transition name="home-button">
+        <div class="mobile-icon" v-if="showScroll" v-on:click="scrollHome()">
+            <div>
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </div>
+        </div>
+    </transition>
+</div>
+

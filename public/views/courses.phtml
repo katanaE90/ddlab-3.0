@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/courser.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+    <link rel="shortcut icon" type="image/jpg" href="../assets/img/fav16.png"/>
+    <title>Курси програмування</title>
+</head>
+<body>
+<div>
+    <header id="courser_main_page">
+        <?php include_once PUB . "components/navigation.phtml" ?>
+        <div class="wrapper_courser">
+            <p class="text">
+            <h1 id="title"></h1>
+        </div>
+
+    </header>
+
+    <section id="course">
+        <div class="container">
+            <div class="aside">
+                <div class="wrapper_courser">
+
+                    <h2 class="text">{{courseDescription.title}}</h2>
+                    <?php if ($this->token === $_GET['token']): ?>
+                        <textarea class="title-edit" v-model="courseDescription.title" aria-label="title"></textarea>
+                    <?php endif ?>
+                    <span>{{courseDescription.subtitle}}</span>
+
+                    <?php if ($this->token === $_GET['token']): ?>
+                        <textarea class="subtitle-edit" v-model="courseDescription.subtitle"
+                                  aria-label="subtitle"></textarea>
+                    <?php endif ?>
+                </div>
+                <div v-for="item,i in courseDescription.description">
+                    <p v-if="!Array.isArray(item)">{{item}}</p>
+                    <?php if ($this->token === $_GET['token']): ?>
+                        <textarea v-if="!Array.isArray(item)" v-model="courseDescription.description[i]"
+                                  aria-label="subtitle"></textarea>
+                    <?php endif ?>
+                    <ol v-if="Array.isArray(item)">
+                        <li v-for="e,k in item">{{e}}
+                            <?php if ($this->token === $_GET['token']): ?>
+                                <textarea v-model="courseDescription.description[i][k]"
+                                          aria-label="subtitle"></textarea>
+                            <?php endif ?>
+                        </li>
+                    </ol>
+                    </br>
+                </div>
+
+
+                <br>
+                <p>Рекомендований вік: від {{courseDescription.age_min}} <span v-if="courseDescription.age_max != 0 && courseDescription.age_max < 100">
+                        до {{courseDescription.age_max}}</span> років.</p>
+                <?php if ($this->token === $_GET['token']): ?>
+                    <textarea class="price-edit" v-model="courseDescription.age_min" aria-label="subtitle"></textarea>
+                <?php endif ?>
+                <?php if ($this->token === $_GET['token']): ?>
+                    <textarea class="price-edit" v-model="courseDescription.age_max" aria-label="subtitle"></textarea>
+                <?php endif ?>
+                <br>
+                <p>Термін: {{courseDescription.duration}} модулі
+                    {{courseDescription.duration*16}}-{{courseDescription.duration*16+2}} занять</p>
+                <?php if ($this->token === $_GET['token']): ?>
+                    <textarea class="price-edit" v-model="courseDescription.duration" aria-label="subtitle"></textarea>
+                <?php endif ?>
+                <br>
+                <p>Вартість курсу: {{courseDescription.price}} грн/міс (4 заняття)</p>
+                <?php if ($this->token === $_GET['token']): ?>
+                    <textarea class="price-edit" v-model="courseDescription.price" aria-label="subtitle"></textarea>
+                <?php endif ?>
+                <br>
+                <p>Програми курсу:</p>
+                <br>
+                <p>{{courseDescription.course_program}};</p>
+                <?php if ($this->token === $_GET['token']): ?>
+                    <textarea v-model="courseDescription.course_program" aria-label="subtitle"></textarea>
+                <?php endif ?>
+
+            </div>
+            <div class="sidebar">
+                <p>групи до 10 осіб</p>
+                <br><br>
+                <p>комфортні аудиторії</p>
+                <br><br>
+                <p>сучасна техніка та ПЗ</p>
+                <br><br>
+                <p>доступна подача матеріалів</p>
+                <br><br>
+                <p>доступна ціна, {{courseDescription.price}} грн/міс</p>
+                <div class="button sidebar-button">
+                    <a href="registratsiya">ЗАПИСАТИСЬ</a>
+                </div>
+            </div>
+        </div>
+        <?php if ($this->token === $_GET['token']): ?>
+            <div class="edit-button-container container">
+                <div class="check"><span>{{editResult}}</span>
+                    <i v-if="successFlag" class="fa fa-check" aria-hidden="true"></i>
+                    <i v-if="errorFlag" class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                </div>
+                <div class="button-edit" v-on:click="edit()">Зберегти</div>
+            </div>
+        <?php endif ?>
+    </section>
+</div>
+
+
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/course.js"></script>
+<script src="components/navigation.js"></script>
+
+</body>
+</html>
